@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "repository": "loyee001/tianqi",
+  "branch": "main",
+  "source_sha": "783cd7ae250dc663fae96f9c55aed75f57d0c60c",
+  "version": "0.8.0",
+  "built_at": "2026-11-15T05:31:58.359Z",
+  "archive": {
+    "path": "site.tar.gz",
+    "sha256": "0b416a6f7724660fa325c2ee8c2f82339b2ef85d6f7b4535440f80146434565b",
+    "bytes": 492782
+  },
+  "files": [
+    {
+      "path": "app.mjs",
+      "bytes": 68018,
+      "sha256": "41a0c1543714b1c8502326a402f4df3e97a3d7e3cf8cc00a1c8beb98e6ad1a85"
+    },
+    {
+      "path": "budget.mjs",
+      "bytes": 31100,
+      "sha256": "9265b5d11b00db24f7a094036450c84fda29944d5bb06834ec2b7246cb375882"
+    },
+    {
+      "path": "campus-buildings.mjs",
+      "bytes": 8719,
+      "sha256": "811d1c36b95073eec32ee99236fce05bb8452f8f5420bca215231816a7fbe983"
+    },
+    {
+      "path": "climate-recommendations.mjs",
+      "bytes": 19121,
+      "sha256": "d734b577eaa6ae63f4f758fd3188c71569d27aabe484f8c63fdf46880d2b3221"
+    },
+    {
+      "path": "climate-simulation.mjs",
+      "bytes": 8690,
+      "sha256": "63f60bf2adf9616bb630fd5419773e241a3cf17dcb55d190d524acaf61c5920d"
+    },
+    {
+      "path": "climate-ui.mjs",
+      "bytes": 10247,
+      "sha256": "97e1fab1a29526bf9830a00a6b87d938692da2d039938c9d4929895f72a8ef49"
+    },
+    {
+      "path": "collision.mjs",
+      "bytes": 1845,
+      "sha256": "847688ee406f23e6721e6c79fe03b0dde6fe73cf08594578784cb8c314f954fd"
+    },
+    {
+      "path": "geometry.mjs",
+      "bytes": 8305,
+      "sha256": "be4af62aae63410c74ed6b21bdfd25c9908914321d120273ee82dd7f5fe55061"
+    },
+    {
+      "path": "index.html",
+      "bytes": 23084,
+      "sha256": "492856ff931294123903f78744c64657eb4137d289f96ed5f6c036373c157627"
+    },
+    {
+      "path": "movement.mjs",
+      "bytes": 2218,
+      "sha256": "5511f3f2182e8a6d5b954f67044dff02d42a403a0e9d07a0bc23e9a19b54108a"
+    },
+    {
+      "path": "pedestrians.mjs",
+      "bytes": 15305,
+      "sha256": "44140de3a4bd45ea8d596f6b5aec6d666886a99825b6c7da80271dfdf0de6076"
+    },
+    {
+      "path": "planting-recommendations.mjs",
+      "bytes": 18180,
+      "sha256": "1b548cf8cc387f352f151c4b548ca7d23236149af2fb6c66881e541e0713eaa5"
+    },
+    {
+      "path": "scene3d.mjs",
+      "bytes": 62750,
+      "sha256": "f8a3bba883dec7106a5d2ee354871724e85e12f458555abb5a60e9fbab688728"
+    },
+    {
+      "path": "style.css",
+      "bytes": 38627,
+      "sha256": "b9ca1fbe5681e3cfbc9f1a9887afa045877bf567f7ef0416f65accd751dcb516"
+    },
+    {
+      "path": "vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "vendor/three.core.js",
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    {
+      "path": "vendor/three.module.js",
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    {
+      "path": "version.json",
+      "bytes": 127,
+      "sha256": "d6cb749203cbb1de26d860e69ef2851de9c2b1ffd0b9fb5e2fd0195cb798ea93"
+    }
+  ]
+}
