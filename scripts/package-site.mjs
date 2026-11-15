@@ -85,7 +85,8 @@ async function collectFiles(distDir) {
     }
   }
   await walk(distDir);
-  if (!entries.some(entry => entry.path === 'index.html')) fail('dist/index.html is required');
+  const index = entries.find(entry => entry.path === 'index.html');
+  if (!index || index.data.length === 0) fail('A nonempty dist/index.html is required');
   return entries;
 }
 
@@ -97,6 +98,7 @@ export async function packageSite({ distDir = join(ROOT, 'dist'), outputDir = jo
   const entries = await collectFiles(resolve(distDir));
   entries.push({ path: 'version.json', data: Buffer.from(JSON.stringify({ source_sha: sourceSha, version, built_at: builtAt }, null, 2) + '\n') });
   entries.sort((a, b) => compare(a.path, b.path));
+  if (entries.some(entry => entry.data.length > LIMITS.fileBytes)) fail('Static file exceeds 10 MiB, including generated metadata');
   const totalBytes = entries.reduce((sum, entry) => sum + entry.data.length, 0);
   if (entries.length > LIMITS.files || totalBytes > LIMITS.totalBytes) fail('Static package exceeds file count or total size limit');
   const parts = [];
@@ -202,6 +204,16 @@ async function selfTest() {
       await assert.rejects(packageSite({ ...config, version: '../../private' }), /package version/);
       await writeFile(join(config.distDir, 'version.json'), '{}');
       await assert.rejects(packageSite(config), /reserved/);
+    });
+    await test('a real index is required while empty optional static resources are valid', async () => {
+      const config = await fixture();
+      await writeFile(join(config.distDir, 'empty.css'), '');
+      const manifest = await packageSite(config);
+      assert.equal(manifest.files.find(file => file.path === 'empty.css').bytes, 0);
+      await writeFile(join(config.distDir, 'index.html'), '');
+      await assert.rejects(packageSite(config), /nonempty dist\/index.html/);
+      await rm(join(config.distDir, 'index.html'));
+      await assert.rejects(packageSite(config), /nonempty dist\/index.html/);
     });
   } finally { await rm(root, { recursive: true, force: true }); }
 }
