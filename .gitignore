@@ -1,0 +1,13 @@
+node_modules/
+dist/
+release/
+deploy/
+output/
+preview*
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
